@@ -31,29 +31,63 @@ if (typeof GAME === 'undefined') {} else {
             clearInterval(Pog);
 
             function createPanel() {
-                const css = ` #main_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 250px; left: 80%; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #main_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #main_Panel .gh_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
-                const csspvp = ` #pvp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 80%; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #pvp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #pvp_Panel .pvp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input input::placeholder {color: #4b4b4b;} #pvp_Panel .gameee_input{text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gameee_input input::placeholder {color: #4b4b4b;}`;
-                const cssresp = ` #resp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 80%; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #resp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #resp_Panel .resp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
+                const css = ` #main_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 250px; left: 80%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #main_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #main_Panel .gh_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
+                const csspvp = ` #pvp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 80%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #pvp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #pvp_Panel .pvp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gamee_input input::placeholder {color: #4b4b4b;} #pvp_Panel .gameee_input{text-align:center; border-bottom:solid gray 1px; color: white;} #pvp_Panel .gameee_input input::placeholder {color: #4b4b4b;}`;
+                const cssresp = ` #resp_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 80%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid;
+                 border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #resp_Panel .sekcja { position: absolute; top: -27px; left: -7px; background:
+                  rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #resp_Panel .resp_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
                 const csscode = ` #code_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 80%; z-index: 9999; width: 180px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #code_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 180px; cursor: all-scroll; } #code_Panel .code_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} `;
-                const cssres = ` #res_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 65%; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #res_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #res_Panel .res_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #res_Panel ul {margin-left:-30px; color:white; margin:7px 0px 5px 0px; padding: 0px; text-align: center;} `;
-                const csslpvm = ` #lpvm_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 650px; left: 80%; z-index: 9999; width: 150px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #lpvm_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #lpvm_Panel .lpvm_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #lpvm_Panel .pvm_killed {cursor:pointer;text-align:center; border-LGtom:solid gray 1px;text-align:center; color:white;} #lpvm_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} `;
-                const html = ` <div id="main_Panel"> <div class="sekcja panel_dragg">ALL FOR ONE</div> <div class='gh_button gh_resp'>PVM<b class='gh_status red'>Off</b></div> <div class='gh_button gh_pvp'>PVP<b class='gh_status red'>Off</b></div> <div class='gh_button gh_lpvm'>Listy<b class='gh_status red'>Off</b></div> <div class='gh_button gh_res'>Zbierajka<b class='gh_status red'>Off</b></div> <div class='gh_button gh_code'>Kody<b class='gh_status red'>Off</b></div> </div> `;
-                const PVP_panel = ` <div id="pvp_Panel"> <div class="sekcja pvp_dragg">PVP</div> <div class='pvp_button pvp_pvp'>PVP<b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_Code'>Kody<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_rb_avoid'>Unikaj borny<b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_WI'>Wojny Imp<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_WK'>Wojny Klanowe<b class='pvp_status green'>On</b></div> <div class='pvp_button pvp_buff_imp'>Bufy IMP<b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_buff_clan'>Bufy KLAN<b class='pvp_status red'>Off</b></div> <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Lista wojen" name='pvp_capt' value='' /></div> <div class='gameee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Szybkość 10-100" name='speed_capt' value='50' /></div> </div> `;
-                const RESP_panel = ` <div id="resp_Panel"> <div class="sekcja resp_dragg">SPAWN MOBKóW</div> <div class="resp_button resp_resp">RESP<b class="resp_status red">Off</b></div> <div class="resp_button resp_code">Kody<b class="resp_status green">On</b></div> <div class="resp_button resp_sub">Subka<b class="resp_status green">On</b></div> <div class="resp_button resp_ost">Jaka<b class="resp_status green">Ost</b></div> <div class="resp_button resp_multi">Multiwalka<b class="resp_status green">On</b></div> <div class="resp_button resp_ssj">SSJ<b class="resp_status green">On</b></div> <div class="resp_button resp_buff_imp">Bufki IMP<b class="resp_status red">Off</b></div> <div class="resp_button resp_buff_clan">Bufki KLAN<b class="resp_status red">Off</b></div> <div class="resp_button resp_blue">BLUE<b class="resp_status red">Off</b></div> <div class="resp_button resp_green">GREEN<b class="resp_status red">Off</b></div> <div class="resp_button resp_purple">PURPLE<b class="resp_status red">Off</b></div> <div class="resp_button resp_yellow">YELLOW<b class="resp_status red">Off</b></div> <div class="resp_button resp_red">RED<b class="resp_status red">Off</b></div> <div class="resp_button resp_magic">Wyciąg<b class="resp_status red">Off</b></div> <div class="resp_button resp_bless">BŁOGO<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh1">SMOK<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh2">5% EXP<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh3">5% MOC<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh4">150K MAX<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh5">5% MOC<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh6">5% PSK<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh7">200% EXP<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh8">500 LVL<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh9">500% EXP<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh10">25% MOC<b class="resp_status red">Off</b></div> <div class="resp_button resp_on">Włącz All<b class="resp_status green">On</b></div> <div class="resp_button resp_off">Wyłącz All<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh11">100% Limit<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh14">100% Limit<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh12">200% Przyrost<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh13">300% Przyrost<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh15">5% kod<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh16">5 Min cd pvp <b class="resp_status red">Off</b></div> <div class="resp_button resp_bh17">15% szybsze zbieranie<b class="resp_status red">Off</b></div> <div class="resp_button resp_bh18">15% więcej szansy na zebranie<b class="resp_status red">Off</b></div> </div> `;
-                const CODE_panel = ` <div id="code_Panel"> <div class="sekcja code_dragg">Kody</div> <div class="code_button code_code">KODY<b class="code_status red">Off</b></div> <div class="code_button code_acc">Konto<b class="code_status red">Off</b></div> <div class="code_button code_zast">Zastępstwa<b class="code_status red">Off</b></div> <div class="code_button code_bh1">Błogo 250% tren<b class="code_status red">Off</b></div> <div class="code_button code_bh2">Błogo 5% kod<b class="code_status red">Off</b></div> <label class='select_input'><select id='bot_what_to_train'><option value='1'>Siła</option><option value='2'>Szybkość</option><option value='3'>Wytrzymałość</option><option value='4'>Siła Woli</option><option value='5'>Energia Ki</option><option value='6'>Wtajemniczenie</option></select></label> <label class='select_input'><select id='bot_what_to_traintime'><option value='1'>1 godz.</option><option value='2'>2 godz.</option><option value='3'>3 godz.</option><option value='4'>4 godz.</option><option value='5'>5 godz.</option><option value='6'>6 godz.</option><option value='7'>7 godz.</option><option value='8'>8 godz.</option><option value='9'>9 godz.</option><option value='10'>10 godz.</option><option value='11'>11 godz.</option><option value='12'>12 godz.</option></label> </div> `;
+                const cssres = ` #res_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 75%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #res_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #res_Panel .res_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #res_Panel ul {margin-left:-30px; color:white; margin:7px 0px 5px 0px; padding: 0px; text-align: center;} `;
+                const cssinne = ` #inne_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 650px; left: 80%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #inne_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #inne_Panel .inne_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #inne_Panel .pvm_killed {cursor:pointer;text-align:center; border-LGtom:solid gray 1px;text-align:center; color:white;} #inne_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} `;
+                const html = ` <div id="main_Panel"> <div class="sekcja panel_dragg">ALL FOR ONE</div> <div class='gh_button gh_resp'>PVM<b class='gh_status red'>Off</b></div> <div class='gh_button gh_pvp'>PVP<b class='gh_status red'>Off</b></div>  <div class='gh_button gh_res'>Zbierajka<b class='gh_status red'>Off</b></div> <div class='gh_button gh_inne'>Inne<b class='gh_status red'>Off</b></div> </div> `;
+                const PVP_panel = ` <div id="pvp_Panel"> <div class="sekcja pvp_dragg">PVP</div> <div class='pvp_button pvp_pvp'>PVP<b class='pvp_status red'>Off</b></div>  <div class='pvp_button pvp_WI'>Wojny <b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_WK'>Wojny Klanowe<b class='pvp_status red'>Off</b></div>  <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Lista wojen" name='pvp_capt' value='' /></div> <div class='gameee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Szybkość 10-100" name='speed_capt' value='50' /></div> </div> `;
+                const RESP_panel = ` <div id="resp_Panel"> <div class="sekcja resp_dragg">SPAWN MOBKóW</div> <div class="resp_button resp_resp">On<b class="resp_status red">Off</b></div>  <div class="resp_button resp_resp1">Resp<b class="resp_status red">Off</b></div> <div class="resp_button resp_rare">exp<b class="resp_status red">Off</b></div> <div class="resp_button resp_normal">Niszczenie eq<b class="resp_status red">Off</b></div> <div class="resp_button resp_leg">Niszczenie leq<b class="resp_status red">Off</b></div> <div class="resp_button resp_blue">Ogromny ramen<b class="resp_status red">Off</b></div> <div class="resp_button resp_green">maly ramen<b class="resp_status red">Off</b></div> <div class="resp_button resp_purple">Powiekszony ramen<b class="resp_status red">Off</b></div> <div class="resp_button resp_yellow">zolta pigula<b class="resp_status red">Off</b></div> <div class="resp_button resp_red">zielona pigula<b class="resp_status red">Off</b></div> <div class="resp_button resp_magic">Czerwona pigula<b class="resp_status red">Off</b></div>    <div class="resp_button resp_on">Włącz All<b class="resp_status green">On</b></div> <div class="resp_button resp_off">Wyłącz All<b class="resp_status red">Off</b></div>   </div> `;
+                const CODE_panel = ` <div id="code_Panel"> <div class="sekcja code_dragg">Inne</div> <div class="code_button code_code">KODY<b class="code_status red">Off</b></div> <div class="code_button code_acc">Konto<b class="code_status red">Off</b></div> <div class="code_button code_zast">Zastępstwa<b class="code_status red">Off</b></div> <div class="code_button code_bh1">Błogo 250% tren<b class="code_status red">Off</b></div> <div class="code_button code_bh2">Błogo 5% kod<b class="code_status red">Off</b></div> <label class='select_input'><select id='bot_what_to_train'><option value='1'>Siła</option><option value='2'>Szybkość</option><option value='3'>Wytrzymałość</option><option value='4'>Siła Woli</option><option value='5'>Energia Ki</option><option value='6'>Wtajemniczenie</option></select></label> <label class='select_input'><select id='bot_what_to_traintime'><option value='1'>1 godz.</option><option value='2'>2 godz.</option><option value='3'>3 godz.</option><option value='4'>4 godz.</option><option value='5'>5 godz.</option><option value='6'>6 godz.</option><option value='7'>7 godz.</option><option value='8'>8 godz.</option><option value='9'>9 godz.</option><option value='10'>10 godz.</option><option value='11'>11 godz.</option><option value='12'>12 godz.</option></label> </div> `;
                 const RES_panel = ` <div id="res_Panel"> <div class="sekcja res_dragg">SUROWCE</div> <div class="res_button res_res">ZBIERAJ<b class="res_status red">Off</b></div> <div class="bt_cool" style="text-align:center; color:white;"></div> <ul></ul> </div> `;
                 const LPVM_panel = ` <div id="lpvm_Panel"> <div class="sekcja lpvm_dragg">LISTY GOŃCZE</div> <div class='pvm_killed'>Wykonane listy: <b>0</b></div> <div class="lpvm_button lpvm_lpvm">START<b class="lpvm_status red">Off</b></div> <div class="lpvm_button lpvm_g">G-Born<b class="lpvm_status red">Off</b></div> <div class="lpvm_button lpvm_u">U-Born<b class="lpvm_status red">Off</b></div> <div class="lpvm_button lpvm_s">S-Born<b class="lpvm_status red">Off</b></div> <div class="lpvm_button lpvm_h">H-Born<b class="lpvm_status red">Off</b></div> <div class="lpvm_button lpvm_limit">Limit<b class="lpvm_status red">Off</b></div> <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Enter text" name='lpvm_capt' value='60' /></div> </div> `;
+                const INNE_Panel = `<div id="inne_Panel"> <div class="sekcja inne_dragg">Inne</div> <div class="inne_button inne_wymiana">Wymiana<strong class="inne_status red">Off</strong></div>
+                    <div class="inne_button inne_ronin">Ronin<strong class="inne_status red">Off</strong></div>
+                    <div class="inne_button inne_karciana">Karciana<strong class="inne_status red">Off</strong></div>
+                    <div class="inne_check ronin_opt1"><select 
+                    style="width: 150px; margin-left: -2px; background: grey; text-align: center; font-size: 16;" name="ronin_opt">
+                    <option value="82">Krysztal chakry</option>
+                    <option value="83">Inverter</option>
+                    <option value="84">Ulepszacz</option>
+                    <option value="85">Prowo boss</option>
+                    <option value="86">Misja S</option>
+                    <option value="87">Subka 3x</option>
+                    <option value="88">Zwoj resetu</option>
+                    <option value="89">Zwoj transferu</option>
+                    <option value="90">Zwoj exp</option>
+                    <option value="91">Maly ramen</option>
+                    </select></div>
+                    <div class="inne_check karciana_opt1"><select style="width: 150px; margin-left: -2px; background: grey; text-align: center; font-size: 16;" name="karciana_opt">
+                    <option value="122">Karta dusz</option>
+                    <option value="123">Esencja dusz</option>
+                    <option value="124">Powiekszony ramen</option>
+                    <option value="125">Epicki zwoj</option>
+                    <option value="126">Esencja jakosci</option>
+                    <option value="127">zwoj resetu</option>
+                    <option value="128">zwoj teleportacji</option>
+                    <option value="129">Inverter</option>
+                    <option value="130">Ulepszacz</option>
+                    </select>
+                    </div>
+                    <div class="gamee_input insta_capt1"><input style="width: 150px; margin-left: -2px; background: grey; text-align: center; font-size: 16;" name="insta_capt" type="text" value="50" placeholder="Szybkość 10-1000" /></div>
+                </div> `
+                
                 $("body").append(`<style>${css}</style>${html}`);
                 $("body").append(`<style>${csspvp}</style>${PVP_panel}`);
                 $("body").append(`<style>${cssresp}</style>${RESP_panel}`);
-                $("body").append(`<style>${csscode}</style>${CODE_panel}`);
+                $("body").append(`<style>${cssinne}</style>${INNE_Panel}`);
                 $("body").append(`<style>${cssres}</style>${RES_panel}`);
-                $("body").append(`<style>${csslpvm}</style>${LPVM_panel}`);
+                // $("body").append(`<style>${csslpvm}</style>${LPVM_panel}`);
                 $("#pvp_Panel").hide();
                 $("#resp_Panel").hide();
                 $("#code_Panel").hide();
                 $("#res_Panel").hide();
                 $("#lpvm_Panel").hide();
+                $("#inne_Panel").hide();
                 $("#main_Panel").draggable({
                     handle: ".panel_dragg"
                 });
@@ -66,8 +100,8 @@ if (typeof GAME === 'undefined') {} else {
                 $("#res_Panel").draggable({
                     handle: ".res_dragg"
                 });
-                $("#lpvm_Panel").draggable({
-                    handle: ".lpvm_dragg"
+                $("#inne_Panel").draggable({
+                    handle: ".inne_dragg"
                 });
                 $("#code_Panel").draggable({
                     handle: ".code_dragg"
@@ -84,6 +118,7 @@ if (typeof GAME === 'undefined') {} else {
                     }
                 });
                 $('#main_Panel .gh_resp').click(() => {
+                    console.log("resp  clicked");
                     if ($(".gh_resp .gh_status").hasClass("red")) {
                         $(".gh_resp .gh_status").removeClass("red").addClass("green").html("On");
                         $("#resp_Panel").show();
@@ -95,6 +130,7 @@ if (typeof GAME === 'undefined') {} else {
                     }
                 });
                 $('#main_Panel .gh_res').click(() => {
+                    console.log("res inne clicked");
                     if ($(".gh_res .gh_status").hasClass("red")) {
                         $(".gh_res .gh_status").removeClass("red").addClass("green").html("On");
                         $("#res_Panel").show();
@@ -105,28 +141,97 @@ if (typeof GAME === 'undefined') {} else {
                         $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
                     }
                 });
-                $('#main_Panel .gh_lpvm').click(() => {
-                    if ($(".gh_lpvm .gh_status").hasClass("red")) {
-                        $(".gh_lpvm .gh_status").removeClass("red").addClass("green").html("On");
-                        $("#lpvm_Panel").show();
+                // $('#main_Panel .gh_inne').click(() => {
+                //     if ($(".gh_lpvm .gh_status").hasClass("red")) {
+                //         $(".gh_lpvm .gh_status").removeClass("red").addClass("green").html("On");
+                //         $("#inne_Panel").show();
+                //     } else {
+                //         $(".gh_lpvm .gh_status").removeClass("green").addClass("red").html("Off");
+                //         $("#inne_Panel").hide();
+                //         LPVM.Stop = true;
+                //         $(".inne_wymiana .lpvm_status").removeClass("green").addClass("red").html("Off");
+                //     }
+                // });
+                $('#main_Panel .gh_inne').click(() => {
+                    console.log("inne clicked");
+                    if ($(".gh_inne .gh_status").hasClass("red")) {
+                        $(".gh_inne .gh_status").removeClass("red").addClass("green").html("On");
+                        $("#inne_Panel").show();
+                        $("#inne_Panel .karciana_opt1").hide();
+                        $("#inne_Panel .insta_capt1").hide();
+                        $("#inne_Panel .ronin_opt1").hide();
                     } else {
-                        $(".gh_lpvm .gh_status").removeClass("green").addClass("red").html("Off");
-                        $("#lpvm_Panel").hide();
-                        LPVM.Stop = true;
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
+                        $(".gh_inne .gh_status").removeClass("green").addClass("red").html("Off");
+                        $("#inne_Panel").hide();
+                        $("#inne_Panel .karciana_opt1").hide();
+                        $("#inne_Panel .insta_capt1").hide();
+                        $("#inne_Panel .ronin_opt1").hide();
+                        $(".inne_wymiana .inne_status").removeClass("green").addClass("red").html("Off");
                     }
                 });
-                $('#main_Panel .gh_code').click(() => {
-                    if ($(".gh_code .gh_status").hasClass("red")) {
-                        $(".gh_code .gh_status").removeClass("red").addClass("green").html("On");
-                        $("#code_Panel").show();
+
+                $('#inne_Panel .inne_ronin').click(() => {
+                    if ($(".inne_ronin .inne_status").hasClass("red")) {
+                        $(".inne_ronin .inne_status").removeClass("red").addClass("green").html("On");
+                        $("#inne_Panel .insta_capt1").show();
+                        $("#inne_Panel .ronin_opt1").show();
+                        $("#inne_Panel .karciana_opt1").hide();
+                        $(".inne_karciana .inne_status").removeClass("green").addClass("red").html("Off");
+                        INNE.karciana = false;
+                        INNE.ronin = true;
                     } else {
-                        $(".gh_code .gh_status").removeClass("green").addClass("red").html("Off");
-                        $("#code_Panel").hide();
-                        CODE.stop = true;
-                        $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
+                        $(".inne_ronin .inne_status").removeClass("green").addClass("red").html("Off");
+                        $("#inne_Panel .karciana_opt1").hide();
+                        $("#inne_Panel .insta_capt1").hide();
+                        $("#inne_Panel .ronin_opt1").hide();
+                        $(".inne_karciana .inne_status").removeClass("green").addClass("red").html("Off");
+                        INNE.karciana = false;
+                        INNE.ronin = false;
                     }
                 });
+
+                $('#inne_Panel .inne_karciana').click(() => {
+                    if ($(".inne_karciana .inne_status").hasClass("red")) {
+                        $(".inne_karciana .inne_status").removeClass("red").addClass("green").html("On");
+                        $("#inne_Panel .insta_capt1").show();
+                        $("#inne_Panel .ronin_opt1").hide();
+                        $("#inne_Panel .karciana_opt1").show();
+                        $(".inne_ronin .inne_status").removeClass("green").addClass("red").html("Off");
+                        INNE.karciana = true;
+                        INNE.ronin = false;
+                    } else {
+                        $(".inne_karciana .inne_status").removeClass("green").addClass("red").html("Off");
+                        $("#inne_Panel .karciana_opt1").hide();
+                        $("#inne_Panel .insta_capt1").hide();
+                        $("#inne_Panel .ronin_opt1").hide();
+                        $(".inne_ronin .inne_status").removeClass("green").addClass("red").html("Off");
+                        INNE.karciana = false;
+                        INNE.ronin = false;
+                    }
+                });
+
+                $('#inne_Panel .inne_wymiana').click(() => {
+                    if ($(".inne_wymiana .inne_status").hasClass("red")) {
+                        if ($(".inne_karciana .inne_status").hasClass("red") && ($(".inne_ronin .inne_status").hasClass("red"))) {
+                            return;
+                        }
+                        $(".inne_wymiana .inne_status").removeClass("red").addClass("green").html("On");
+                        INNE.wymiana = true;
+                        INNE.start();
+                    } else {
+                        INNE.wymiana = false;
+                        INNE.karciana = false;
+                        INNE.ronin = false;
+                        $(".inne_wymiana .inne_status").removeClass("green").addClass("red").html("Off");
+                        $("#inne_Panel .karciana_opt1").hide();
+                        $("#inne_Panel .insta_capt1").hide();
+                        $("#inne_Panel .ronin_opt1").hide();
+                        $(".inne_ronin .inne_status").removeClass("green").addClass("red").html("Off");
+                        $(".inne_karciana .inne_status").removeClass("green").addClass("red").html("Off");
+
+                    }
+                });
+
                 $('#pvp_Panel .pvp_pvp').click(() => {
                     if (PVP.stop) {
                         $(".pvp_pvp .pvp_status").removeClass("red").addClass("green").html("On");
@@ -134,10 +239,6 @@ if (typeof GAME === 'undefined') {} else {
                         PVP.start();
                         RESP.stop = true;
                         RES.stop = true;
-                        LPVM.Stop = true;
-                        CODE.stop = true;
-                        $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
                         $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
                         $(".resp_resp .resp_status").removeClass("green").addClass("red").html("Off");
                     } else {
@@ -145,24 +246,7 @@ if (typeof GAME === 'undefined') {} else {
                         PVP.stop = true;
                     }
                 });
-                $('#pvp_Panel .pvp_rb_avoid').click(() => {
-                    if (PVP.higherRebornAvoid) {
-                        $(".pvp_rb_avoid .pvp_status").removeClass("green").addClass("red").html("Off");
-                        PVP.higherRebornAvoid = false;
-                    } else {
-                        $(".pvp_rb_avoid .pvp_status").removeClass("red").addClass("green").html("On");
-                        PVP.higherRebornAvoid = true;
-                    }
-                });
-                $('#pvp_Panel .pvp_Code').click(() => {
-                    if (PVP.code) {
-                        $(".pvp_Code .pvp_status").removeClass("green").addClass("red").html("Off");
-                        PVP.code = false;
-                    } else {
-                        $(".pvp_Code .pvp_status").removeClass("red").addClass("green").html("On");
-                        PVP.code = true;
-                    }
-                });
+
                 $('#pvp_Panel .pvp_WI').click(() => {
                     if (PVP.wi) {
                         $(".pvp_WI .pvp_status").removeClass("green").addClass("red").html("Off");
@@ -172,24 +256,7 @@ if (typeof GAME === 'undefined') {} else {
                         PVP.wi = true;
                     }
                 });
-                $('#pvp_Panel .pvp_buff_imp').click(() => {
-                    if (PVP.buff_imp) {
-                        $(".pvp_buff_imp .pvp_status").removeClass("green").addClass("red").html("Off");
-                        PVP.buff_imp = false;
-                    } else {
-                        $(".pvp_buff_imp .pvp_status").removeClass("red").addClass("green").html("On");
-                        PVP.buff_imp = true;
-                    }
-                });
-                $('#pvp_Panel .pvp_buff_clan').click(() => {
-                    if (PVP.buff_clan) {
-                        $(".pvp_buff_clan .pvp_status").removeClass("green").addClass("red").html("Off");
-                        PVP.buff_clan = false;
-                    } else {
-                        $(".pvp_buff_clan .pvp_status").removeClass("red").addClass("green").html("On");
-                        PVP.buff_clan = true;
-                    }
-                });
+
                 $('#pvp_Panel .pvp_WK').click(() => {
                     if (PVP.wk) {
                         $(".pvp_WK .pvp_status").removeClass("green").addClass("red").html("Off");
@@ -201,24 +268,7 @@ if (typeof GAME === 'undefined') {} else {
                 });
                 $("#pvp_Panel input[name=pvp_capt]").val(PVP.clan_list);
                 $("#pvp_Panel input[name=speed_capt]").val(PVP.speed);
-                $(document).bind('keydown', '1', function() {
-                    if (JQS.chm.is(":focus") == false) {
-                        if ($(".gh_resp .gh_status").hasClass("green")) {
-                            $('#resp_Panel .resp_resp').click();
-                        }
-                    }
-                    return false;
-                });
-                $('#resp_Panel .resp_bh1').hide();
-                $('#resp_Panel .resp_bh2').hide();
-                $('#resp_Panel .resp_bh3').hide();
-                $('#resp_Panel .resp_bh4').hide();
-                $('#resp_Panel .resp_bh5').hide();
-                $('#resp_Panel .resp_bh6').hide();
-                $('#resp_Panel .resp_bh7').hide();
-                $('#resp_Panel .resp_bh8').hide();
-                $('#resp_Panel .resp_bh9').hide();
-                $('#resp_Panel .resp_bh10').hide();
+
                 $('#resp_Panel .resp_on').hide();
                 $('#resp_Panel .resp_off').hide();
                 $('#resp_Panel .resp_resp').click(() => {
@@ -228,11 +278,7 @@ if (typeof GAME === 'undefined') {} else {
                         RESP.action();
                         RESP.reloadint = setInterval(RESP.reload_map, 60000);
                         PVP.stop = true;
-                        LPVM.Stop = true;
-                        CODE.stop = true;
                         RESP.loc = GAME.char_data.loc;
-                        $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
                         $(".pvp_pvp .pvp_status").removeClass("green").addClass("red").html("Off");
                     } else {
                         $(".resp_resp .resp_status").removeClass("green").addClass("red").html("Off");
@@ -240,46 +286,42 @@ if (typeof GAME === 'undefined') {} else {
                         clearInterval(RESP.reloadint);
                     }
                 });
-                $('#resp_Panel .resp_bless').click(() => {
-                    if (RESP.bless) {
-                        $(".resp_bless .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.bless = false;
-                        $('#resp_Panel .resp_bh1').hide();
-                        $('#resp_Panel .resp_bh2').hide();
-                        $('#resp_Panel .resp_bh3').hide();
-                        $('#resp_Panel .resp_bh4').hide();
-                        $('#resp_Panel .resp_bh5').hide();
-                        $('#resp_Panel .resp_bh6').hide();
-                        $('#resp_Panel .resp_bh7').hide();
-                        $('#resp_Panel .resp_bh8').hide();
-                        $('#resp_Panel .resp_bh9').hide();
-                        $('#resp_Panel .resp_bh10').hide();
-                        $('#resp_Panel .resp_on').hide();
-                        $('#resp_Panel .resp_off').hide();
+                
+                $('#resp_Panel .resp_resp1').click(() => {
+                    if ($(".resp_resp1 .resp_status").hasClass("red")) {
+                        $(".resp_resp1 .resp_status").removeClass("red").addClass("green").html("On");
+                        // stop = false
                     } else {
-                        $(".resp_bless .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.bless = true;
-                        $('#resp_Panel .resp_bh1').show();
-                        $('#resp_Panel .resp_bh2').show();
-                        $('#resp_Panel .resp_bh3').show();
-                        $('#resp_Panel .resp_bh4').show();
-                        $('#resp_Panel .resp_bh5').show();
-                        $('#resp_Panel .resp_bh6').show();
-                        $('#resp_Panel .resp_bh7').show();
-                        $('#resp_Panel .resp_bh8').show();
-                        $('#resp_Panel .resp_bh9').show();
-                        $('#resp_Panel .resp_bh10').show();
-                        $('#resp_Panel .resp_on').show();
-                        $('#resp_Panel .resp_off').show();
+                        $(".resp_resp1 .resp_status").removeClass("green").addClass("red").html("Off");
+                        // $("#resp_Panel").hide();
+                        // stop = true;
                     }
                 });
-                $('#resp_Panel .resp_code').click(() => {
-                    if (RESP.code) {
-                        $(".resp_code .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.code = false;
+                $('#resp_Panel .resp_normal').click(() => {
+                    if (RESP.normal) {
+                        $(".resp_normal .resp_status").removeClass("green").addClass("red").html("Off");
+                        RESP.normal = false;
                     } else {
-                        $(".resp_code .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.code = true;
+                        $(".resp_normal .resp_status").removeClass("red").addClass("green").html("On");
+                        RESP.normal = true;
+                    }
+                });
+                $('#resp_Panel .resp_rare').click(() => {
+                    if (RESP.rare) {
+                        $(".resp_rare .resp_status").removeClass("green").addClass("red").html("Off");
+                        RESP.rare = false;
+                    } else {
+                        $(".resp_rare .resp_status").removeClass("red").addClass("green").html("On");
+                        RESP.rare = true;
+                    }
+                });
+                $('#resp_Panel .resp_leg').click(() => {
+                    if (RESP.leg) {
+                        $(".resp_leg .resp_status").removeClass("green").addClass("red").html("Off");
+                        RESP.lge = false;
+                    } else {
+                        $(".resp_leg .resp_status").removeClass("red").addClass("green").html("On");
+                        RESP.leg = true;
                     }
                 });
                 $('#resp_Panel .resp_sub').click(() => {
@@ -436,336 +478,14 @@ if (typeof GAME === 'undefined') {} else {
                         $('#resp_Panel .resp_yellow').show();
                     }
                 });
-                $('#resp_Panel .resp_on').click(() => {
-                    $(".resp_bh1 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh2 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh3 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh4 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh5 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh6 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh7 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh8 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh9 .resp_status").removeClass("red").addClass("green").html("On");
-                    $(".resp_bh10 .resp_status").removeClass("red").addClass("green").html("On");
-                    RESP.b1 = true;
-                    RESP.b2 = true;
-                    RESP.b3 = true;
-                    RESP.b4 = true;
-                    RESP.b5 = true;
-                    RESP.b6 = true;
-                    RESP.b7 = true;
-                    RESP.b8 = true;
-                    RESP.b9 = true;
-                    RESP.b10 = true;
-                });
-                $('#resp_Panel .resp_off').click(() => {
-                    $(".resp_bh1 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh2 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh3 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh4 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh5 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh6 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh7 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh8 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh9 .resp_status").removeClass("green").addClass("red").html("Off");
-                    $(".resp_bh10 .resp_status").removeClass("green").addClass("red").html("Off");
-                    RESP.b1 = false;
-                    RESP.b2 = false;
-                    RESP.b3 = false;
-                    RESP.b4 = false;
-                    RESP.b5 = false;
-                    RESP.b6 = false;
-                    RESP.b7 = false;
-                    RESP.b8 = false;
-                    RESP.b9 = false;
-                    RESP.b10 = false;
-                });
-                $('#resp_Panel .resp_buff_imp').click(() => {
-                    if (RESP.buff_imp) {
-                        $(".resp_buff_imp .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.buff_imp = false;
-                    } else {
-                        $(".resp_buff_imp .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.buff_imp = true;
-                    }
-                });
-                $('#resp_Panel .resp_buff_clan').click(() => {
-                    if (RESP.buff_clan) {
-                        $(".resp_buff_clan .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.buff_clan = false;
-                    } else {
-                        $(".resp_buff_clan .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.buff_clan = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh1').click(() => {
-                    if (RESP.b1) {
-                        $(".resp_bh1 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b1 = false;
-                    } else {
-                        $(".resp_bh1 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b1 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh2').click(() => {
-                    if (RESP.b2) {
-                        $(".resp_bh2 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b2 = false;
-                    } else {
-                        $(".resp_bh2 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b2 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh3').click(() => {
-                    if (RESP.b3) {
-                        $(".resp_bh3 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b3 = false;
-                    } else {
-                        $(".resp_bh3 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b3 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh4').click(() => {
-                    if (RESP.b4) {
-                        $(".resp_bh4 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b4 = false;
-                    } else {
-                        $(".resp_bh4 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b4 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh5').click(() => {
-                    if (RESP.b5) {
-                        $(".resp_bh5 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b5 = false;
-                    } else {
-                        $(".resp_bh5 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b5 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh6').click(() => {
-                    if (RESP.b6) {
-                        $(".resp_bh6 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b6 = false;
-                    } else {
-                        $(".resp_bh6 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b6 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh7').click(() => {
-                    if (RESP.b7) {
-                        $(".resp_bh7 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b7 = false;
-                    } else {
-                        $(".resp_bh7 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b7 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh8').click(() => {
-                    if (RESP.b8) {
-                        $(".resp_bh8 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b8 = false;
-                    } else {
-                        $(".resp_bh8 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b8 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh9').click(() => {
-                    if (RESP.b9) {
-                        $(".resp_bh9 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b9 = false;
-                    } else {
-                        $(".resp_bh9 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b9 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh10').click(() => {
-                    if (RESP.b10) {
-                        $(".resp_bh10 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b10 = false;
-                    } else {
-                        $(".resp_bh10 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b10 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh11').click(() => {
-                    if (RESP.b11) {
-                        $(".resp_bh11 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b11 = false;
-                    } else {
-                        $(".resp_bh11 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b11 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh12').click(() => {
-                    if (RESP.b12) {
-                        $(".resp_bh12 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b12 = false;
-                    } else {
-                        $(".resp_bh12 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b12 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh13').click(() => {
-                    if (RESP.b13) {
-                        $(".resp_bh13 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b13 = false;
-                    } else {
-                        $(".resp_bh13 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b13 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh14').click(() => {
-                    if (RESP.b14) {
-                        $(".resp_bh14 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b14 = false;
-                    } else {
-                        $(".resp_bh14 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b14 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh15').click(() => {
-                    if (RESP.b15) {
-                        $(".resp_bh15 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b15 = false;
-                    } else {
-                        $(".resp_bh15 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b15 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh16').click(() => {
-                    if (RESP.b16) {
-                        $(".resp_bh16 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b16 = false;
-                    } else {
-                        $(".resp_bh16 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b16 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh17').click(() => {
-                    if (RESP.b17) {
-                        $(".resp_bh17 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b17 = false;
-                    } else {
-                        $(".resp_bh17 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b17 = true;
-                    }
-                });
-                $('#resp_Panel .resp_bh18').click(() => {
-                    if (RESP.b18) {
-                        $(".resp_bh18 .resp_status").removeClass("green").addClass("red").html("Off");
-                        RESP.b18 = false;
-                    } else {
-                        $(".resp_bh18 .resp_status").removeClass("red").addClass("green").html("On");
-                        RESP.b18 = true;
-                    }
-                });
-                $('#lpvm_Panel .lpvm_lpvm').click(() => {
-                    if (LPVM.Stop) {
-                        $(".lpvm_lpvm .lpvm_status").removeClass("red").addClass("green").html("On");
-                        LPVM.Stop = false;
-                        LPVM.Start();
-                        RESP.stop = true;
-                        RES.stop = true;
-                        PVP.stop = true;
-                        CODE.stop = true;
-                        $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".pvp_pvp .pvp_status").removeClass("green").addClass("red").html("Off");
-                        $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
-                        $(".resp_resp .resp_status").removeClass("green").addClass("red").html("Off");
-                    } else {
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        LPVM.Stop = true;
-                    }
-                });
-                $('#lpvm_Panel .pvm_killed').click(() => {
-                    LPVM.pvm_killed = 0;
-                    LPVM.UpdateKilledCounter(LPVM.pvm_killed);
-                });
-                $('#lpvm_Panel .lpvm_g').click(() => {
-                    if ($(".lpvm_g .lpvm_status").hasClass("red")) {
-                        $(".lpvm_g .lpvm_status").removeClass("red").addClass("green").html("On");
-                        LPVM.Born = 2;
-                        $('#lpvm_Panel .lpvm_u').hide();
-                        $('#lpvm_Panel .lpvm_s').hide();
-                        $('#lpvm_Panel .lpvm_h').hide();
-                    } else {
-                        $(".lpvm_g .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        $('#lpvm_Panel .lpvm_u').show();
-                        $('#lpvm_Panel .lpvm_s').show();
-                        $('#lpvm_Panel .lpvm_h').show();
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        LPVM.Stop = true;
-                    }
-                });
-                $('#lpvm_Panel .lpvm_u').click(() => {
-                    if ($(".lpvm_u .lpvm_status").hasClass("red")) {
-                        $(".lpvm_u .lpvm_status").removeClass("red").addClass("green").html("On");
-                        LPVM.Born = 3;
-                        $('#lpvm_Panel .lpvm_g').hide();
-                        $('#lpvm_Panel .lpvm_s').hide();
-                        $('#lpvm_Panel .lpvm_h').hide();
-                    } else {
-                        $(".lpvm_u .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        $('#lpvm_Panel .lpvm_g').show();
-                        $('#lpvm_Panel .lpvm_s').show();
-                        $('#lpvm_Panel .lpvm_h').show();
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        LPVM.Stop = true;
-                    }
-                });
-                $('#lpvm_Panel .lpvm_s').click(() => {
-                    if ($(".lpvm_s .lpvm_status").hasClass("red")) {
-                        $(".lpvm_s .lpvm_status").removeClass("red").addClass("green").html("On");
-                        LPVM.Born = 4;
-                        $('#lpvm_Panel .lpvm_g').hide();
-                        $('#lpvm_Panel .lpvm_u').hide();
-                        $('#lpvm_Panel .lpvm_h').hide();
-                    } else {
-                        $(".lpvm_s .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        $('#lpvm_Panel .lpvm_g').show();
-                        $('#lpvm_Panel .lpvm_u').show();
-                        $('#lpvm_Panel .lpvm_h').show();
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        LPVM.Stop = true;
-                    }
-                });
-                $('#lpvm_Panel .lpvm_h').click(() => {
-                    if ($(".lpvm_h .lpvm_status").hasClass("red")) {
-                        $(".lpvm_h .lpvm_status").removeClass("red").addClass("green").html("On");
-                        LPVM.Born = 5;
-                        $('#lpvm_Panel .lpvm_g').hide();
-                        $('#lpvm_Panel .lpvm_u').hide();
-                        $('#lpvm_Panel .lpvm_s').hide();
-                    } else {
-                        $(".lpvm_h .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        $('#lpvm_Panel .lpvm_g').show();
-                        $('#lpvm_Panel .lpvm_u').show();
-                        $('#lpvm_Panel .lpvm_s').show();
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        LPVM.Stop = true;
-                    }
-                });
-                $('#lpvm_Panel .lpvm_limit').click(() => {
-                    if (LPVM.limit) {
-                        $(".lpvm_limit .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        LPVM.limit = false;
-                    } else {
-                        $(".lpvm_limit .lpvm_status").removeClass("red").addClass("green").html("On");
-                        LPVM.limit = true;
-                    }
-                });
+
                 $('#res_Panel .res_res').click(() => {
                     if (RES.stop && Object.entries(GAME.map_mines.mine_data).length > 0) {
                         $(".res_res .res_status").removeClass("red").addClass("green").html("On");
                         RES.stop = false;
                         RES.Start();
                         PVP.stop = true;
-                        LPVM.Stop = true;
-                        CODE.stop = true;
                         RES.loc = GAME.char_data.loc;
-                        $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
                         $(".pvp_pvp .pvp_status").removeClass("green").addClass("red").html("Off");
                     } else {
                         $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
@@ -789,93 +509,7 @@ if (typeof GAME === 'undefined') {} else {
                         GAME.komunikat("Zatrzymaj najpierw skrypt!");
                     }
                 });
-                $('#code_Panel .code_code').click(() => {
-                    if (CODE.stop) {
-                        $(".code_code .code_status").removeClass("red").addClass("green").html("On");
-                        CODE.stop = false;
-                        CODE.start();
-                        GAME.socket.emit('ga', {
-                            a: 12,
-                            page: 10,
-                            used: 1
-                        });
-                        RESP.stop = true;
-                        RES.stop = true;
-                        LPVM.Stop = true;
-                        PVP.stop = true;
-                        $(".pvp_pvp .pvp_status").removeClass("green").addClass("red").html("Off");
-                        $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                        $(".res_res .res_status").removeClass("green").addClass("red").html("Off");
-                        $(".resp_resp .resp_status").removeClass("green").addClass("red").html("Off");
-                    } else {
-                        $(".code_code .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.stop = true;
-                    }
-                });
-                $('#code_Panel .code_acc').click(() => {
-                    if (CODE.acc) {
-                        $(".code_acc .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.acc = false;
-                    } else {
-                        $(".code_acc .code_status").removeClass("red").addClass("green").html("On");
-                        $(".code_bh1 .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".code_bh2 .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.acc = true;
-                        CODE.b1 = false;
-                        CODE.b2 = false;
-                    }
-                });
-                $('#code_Panel .code_zast').click(() => {
-                    if (CODE.zast) {
-                        $(".code_zast .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.zast = false;
-                    } else {
-                        $(".code_zast .code_status").removeClass("red").addClass("green").html("On");
-                        $(".code_bh1 .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".code_bh2 .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.zast = true;
-                        CODE.b1 = false;
-                        CODE.b2 = false;
-                    }
-                });
-                $('#code_Panel .code_bh1').click(() => {
-                    if (CODE.b1) {
-                        $(".code_bh1 .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.b1 = false;
-                    } else {
-                        $(".code_bh1 .code_status").removeClass("red").addClass("green").html("On");
-                        $(".code_acc .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".code_zast .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.b1 = true;
-                        CODE.acc = false;
-                        CODE.zast = false;
-                    }
-                });
-                $('#code_Panel .code_bh2').click(() => {
-                    if (CODE.b2) {
-                        $(".code_bh2 .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.b2 = false;
-                    } else {
-                        $(".code_bh2 .code_status").removeClass("red").addClass("green").html("On");
-                        $(".code_acc .code_status").removeClass("green").addClass("red").html("Off");
-                        $(".code_zast .code_status").removeClass("green").addClass("red").html("Off");
-                        CODE.b2 = true;
-                        CODE.acc = false;
-                        CODE.zast = false;
-                    }
-                });
-                $('#bot_what_to_train').change((e) => {
-                    CODE.what_to_train = parseInt($(e.target).val());
-                });
-                $('#bot_what_to_traintime').change((e) => {
-                    CODE.what_to_traintime = parseInt($(e.target).val());
-                });
-                $('#lpvm_Panel .gamee_input').change((e) => {
-                    LPVM.limit2 = parseInt($(e.target).val());
-                });
-                $('#lpvm_Panel .gamee_input').change((e) => {
-                    LPVM.limit2 = parseInt($(e.target).val());
-                });
+
                 $('#pvp_Panel .gameee_input').change((e) => {
                     PVP.WSP = parseInt($(e.target).val());
                     PVP.save_speed();
@@ -922,15 +556,59 @@ if (typeof GAME === 'undefined') {} else {
                 $('#available_servers').html(con);
                 $('#available_servers option[value=' + this.server + ']').prop('selected', true);
             };
+
+            var INNE = {
+                ronin: false,
+                karciana: false,
+                wymiana: false,
+                wait_wymiana: 600,
+                cap_wymiana: 0,
+                res_id: 0,
+                exchange_id: 0,
+            };
+            INNE.start = () => {
+                if (INNE.wymiana && !GAME.is_loading) {
+                    INNE.action();
+                } else if (GAME.is_loading) {
+                    window.setTimeout(INNE.start, wait_wymiana);
+                } else {}
+            };
+
+            INNE.action = () => {
+                INNE.cap_wymiana = $("#inne_Panel input[name=insta_capt]").val();
+                if (INNE.ronin) {
+                    INNE.res_id = document.querySelector('select[name="ronin_opt"]').value;
+                    INNE.exchange_id = 9;
+                }
+                if (INNE.karciana) {
+                    INNE.res_id = document.querySelector('select[name="karciana_opt"]').value;
+                    INNE.exchange_id = 13;
+                }
+
+                window.inter_wymiana = window.setInterval(function() {
+                    if (INNE.cap_wymiana > 0) {
+                        console.log("wymiana", INNE.cap_wymiana, INNE.res_id, INNE.exchange_id);
+                        GAME.emitOrder({a:211,type:2,exchange:INNE.exchange_id,item:INNE.res_id});
+                    } else if (INNE.cap_wymiana <= 0) {
+                        clearInterval(inter_wymiana);
+                        console.log("koniec wymiany");
+                        INNE.wymiana = false;
+                        $(".inne_wymiana .inne_status").removeClass("green").addClass("red").html("Off");
+                    }
+                    INNE.cap_wymiana--;
+                }, 100);
+            };
+
             var PVP = {
                 stop: true,
-                wi: true,
-                code: true,
-                wk: true,
-                higherRebornAvoid: false,
+                wi: false,
+                war_cnt: 0,
+                org_cnt: 0,
+                emp : 0,
+                wk: false,
                 caseNumber: 0,
-                wait: 10,
-                wait2: 80,
+                wait_pvp: 10,
+                wait_pvp2: 80,
                 czekajpvp: 160,
                 WSP: 50,
                 licznik: 0,
@@ -948,12 +626,13 @@ if (typeof GAME === 'undefined') {} else {
             };
             PVP.checkkkk = () => {
                 let imp = $("#leader_player").find("[data-option=show_player]").attr("data-char_id");
-                let emp = GAME.char_data.empire;
+                
                 let buff = $(".emp_buff .pull-right").find("button").attr("data-option") == "activate_emp_buff";
                 let buff_id = $(".emp_buff .pull-right").find("button").attr("data-buff");
                 let who_win = $("#gne_satus").text().includes("ZŁO");
                 let abut = $("#clan_buffs").find(`button[data-option="activate_war_buff"]`);
                 let isDisabled = $("#clan_buffs").find(`button[data-option="activate_war_buff"]`).parents("tr").hasClass("disabled");
+                PVP.emp = GAME.char_data.village_id;
                 if (GAME.quick_opts.ssj && $("#ssj_bar").css("display") === "none" && PVP.code) {
                     setTimeout(() => {
                         GAME.socket.emit('ga', {
@@ -1058,10 +737,11 @@ if (typeof GAME === 'undefined') {} else {
                     }
                     PVP.action();
                 } else if (GAME.is_loading) {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 } else {}
             };
             PVP.action = () => {
+                console.log("pvp action", PVP.caseNumber)
                 switch (PVP.caseNumber) {
                     case 0:
                         PVP.caseNumber++;
@@ -1138,7 +818,7 @@ if (typeof GAME === 'undefined') {} else {
                         window.setTimeout(PVP.start, PVP.czekajpvp / PVP.WSPP() / 2);
                     }
                 } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP() * 2);
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP() * 2);
                 }
                 PVP.licznik = 1;
             };
@@ -1176,7 +856,7 @@ if (typeof GAME === 'undefined') {} else {
                         window.setTimeout(PVP.kill_players, PVP.czekajpvp / PVP.WSPP());
                     }
                 } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                     PVP.licznik = 0;
                     kom_clear();
                 }
@@ -1220,51 +900,51 @@ if (typeof GAME === 'undefined') {} else {
                 return tab;
             };
             PVP.wojny1 = () => {
-                if (PVP.wi) {
-                    var aimp = $("#e_admiral_player").find("[data-option=show_player]").attr("data-char_id");
-                    var imp = $("#leader_player").find("[data-option=show_player]").attr("data-char_id");
-                    if (!PVP.adimp) {
-                        GAME.socket.emit('ga', {
-                            a: 50,
-                            type: 0,
-                            empire: GAME.char_data.empire
-                        });
-                        PVP.adimp = true;
-                        window.setTimeout(PVP.wojny1, 500);
-                    } else if (!GAME.emp_enemies.includes(1) && ![GAME.char_data.empire].includes(1) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
-                        GAME.socket.emit('ga', {
-                            a: 50,
-                            type: 7,
-                            target: 1
-                        });
-                        window.setTimeout(PVP.wojny1, 500);
-                    } else if (!GAME.emp_enemies.includes(2) && ![GAME.char_data.empire].includes(2) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
-                        GAME.socket.emit('ga', {
-                            a: 50,
-                            type: 7,
-                            target: 2
-                        });
-                        window.setTimeout(PVP.wojny1, 500);
-                    } else if (!GAME.emp_enemies.includes(3) && ![GAME.char_data.empire].includes(3) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
-                        GAME.socket.emit('ga', {
-                            a: 50,
-                            type: 7,
-                            target: 3
-                        });
-                        window.setTimeout(PVP.wojny1, 500);
-                    } else if (!GAME.emp_enemies.includes(4) && ![GAME.char_data.empire].includes(4) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
-                        GAME.socket.emit('ga', {
-                            a: 50,
-                            type: 7,
-                            target: 4
-                        });
-                        window.setTimeout(PVP.wojny1, 500);
-                    } else {
-                        window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
-                    }
-                } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
-                }
+                // if (PVP.wi) {
+                //     var aimp = $("#e_admiral_player").find("[data-option=show_player]").attr("data-char_id");
+                //     var imp = $("#leader_player").find("[data-option=show_player]").attr("data-char_id");
+                //     if (!PVP.adimp) {
+                //         // GAME.socket.emit('ga', {
+                //         //     a: 50,
+                //         //     type: 0,
+                //         //     empire: GAME.char_data.empire
+                //         // });
+                //         PVP.adimp = true;
+                //         window.setTimeout(PVP.wojny1, 500);
+                //     } else if (!GAME.emp_enemies.includes(1) && ![GAME.char_data.empire].includes(1) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
+                //         // GAME.socket.emit('ga', {
+                //         //     a: 50,
+                //         //     type: 7,
+                //         //     target: 1
+                //         // });
+                //         window.setTimeout(PVP.wojny1, 500);
+                //     } else if (!GAME.emp_enemies.includes(2) && ![GAME.char_data.empire].includes(2) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
+                //         // GAME.socket.emit('ga', {
+                //         //     a: 50,
+                //         //     type: 7,
+                //         //     target: 2
+                //         // });
+                //         window.setTimeout(PVP.wojny1, 500);
+                //     } else if (!GAME.emp_enemies.includes(3) && ![GAME.char_data.empire].includes(3) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
+                //         // GAME.socket.emit('ga', {
+                //         //     a: 50,
+                //         //     type: 7,
+                //         //     target: 3
+                //         // });
+                //         window.setTimeout(PVP.wojny1, 500);
+                //     } else if (!GAME.emp_enemies.includes(4) && ![GAME.char_data.empire].includes(4) && (PVP.check_imp().includes(GAME.char_id) || PVP.check_imp2().includes(GAME.char_id) || imp == GAME.char_id || aimp == GAME.char_id)) {
+                //         // GAME.socket.emit('ga', {
+                //         //     a: 50,
+                //         //     type: 7,
+                //         //     target: 4
+                //         // });
+                //         window.setTimeout(PVP.wojny1, 500);
+                //     } else {
+                //         window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
+                //     }
+                // } else {
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
+                // }
             };
             PVP.zejdz = () => {
                 GAME.socket.emit('ga', {
@@ -1315,7 +995,7 @@ if (typeof GAME === 'undefined') {} else {
                 } else if (x == 14 || x == 2 && PVP.loc < 5 || x == 15 && PVP.loc == 6 || x == 1 || x == 11 && PVP.loc == 5 || x == 2 && PVP.loc == 5) {
                     PVP.go_down();
                 } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 }
             };
             PVP.teleport = () => {
@@ -1328,25 +1008,25 @@ if (typeof GAME === 'undefined') {} else {
                     window.setTimeout(PVP.start, 2000);
                     PVP.tele = false;
                 } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 }
             };
             PVP.check_location = () => {
                 if (GAME.char_data.loc == 351) {
                     PVP.loc = 4;
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 } else if (GAME.char_data.loc == 350) {
                     PVP.loc = 3;
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 } else if (GAME.char_data.loc == 349) {
                     PVP.loc = 2;
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 } else if (GAME.char_data.loc == 348) {
                     PVP.loc = 1;
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 } else {
                     PVP.loc = 7;
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 }
             };
             PVP.cofanie = () => {
@@ -1368,7 +1048,7 @@ if (typeof GAME === 'undefined') {} else {
                     dir: 3,
                     vo: GAME.map_options.vo
                 });
-                window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
+                window.setTimeout(PVP.start, PVP.wait_pvp2 / PVP.WSPP());
             };
             PVP.prawogora = () => {
                 GAME.emitOrder({
@@ -1376,7 +1056,7 @@ if (typeof GAME === 'undefined') {} else {
                     dir: 5,
                     vo: GAME.map_options.vo
                 });
-                window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
+                window.setTimeout(PVP.start, PVP.wait_pvp2 / PVP.WSPP());
             };
             PVP.go_up = () => {
                 GAME.emitOrder({
@@ -1384,7 +1064,7 @@ if (typeof GAME === 'undefined') {} else {
                     dir: 2,
                     vo: GAME.map_options.vo
                 });
-                window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
+                window.setTimeout(PVP.start, PVP.wait_pvp2 / PVP.WSPP());
             };
             PVP.go_down = () => {
                 GAME.emitOrder({
@@ -1392,7 +1072,7 @@ if (typeof GAME === 'undefined') {} else {
                     dir: 1,
                     vo: GAME.map_options.vo
                 });
-                window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
+                window.setTimeout(PVP.start, PVP.wait_pvp2 / PVP.WSPP());
             };
             PVP.go_left = () => {
                 GAME.emitOrder({
@@ -1400,7 +1080,7 @@ if (typeof GAME === 'undefined') {} else {
                     dir: 8,
                     vo: GAME.map_options.vo
                 });
-                window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
+                window.setTimeout(PVP.start, PVP.wait_pvp2 / PVP.WSPP());
             };
             PVP.go_right = () => {
                 GAME.emitOrder({
@@ -1408,20 +1088,21 @@ if (typeof GAME === 'undefined') {} else {
                     dir: 7,
                     vo: GAME.map_options.vo
                 });
-                window.setTimeout(PVP.start, PVP.wait2 / PVP.WSPP());
+                window.setTimeout(PVP.start, PVP.wait_pvp2 / PVP.WSPP());
             };
             PVP.check = () => {
-                if ($("#ewar_list").text().includes("--:--:--")) {
-                    window.setTimeout(PVP.check, 300);
-                } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                if ($("#war_list .timer").length === 0 && PVP.wk) {
+                    GAME.emitOrder({a:39,type:24,shorts:'Yuki'});
                 }
+                window.setTimeout(PVP.start, 180);
             };
             PVP.check2 = () => {
                 if (PVP.checkkkk()) {
+                    console.log("pvp check 1");
                     window.setTimeout(PVP.check2, 1800);
                 } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                    console.log("pvp check 2");
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                 }
             };
             PVP.clan_list = () => {
@@ -1435,18 +1116,32 @@ if (typeof GAME === 'undefined') {} else {
                 localStorage.setItem('clan_list', PVP.war);
             };
             PVP.dec_wars = () => {
-                var wars = $("#pvp_Panel input[name=pvp_capt]").val();
-                var count = wars ? wars.split(";").length : 0;
-                if (count > 0 && PVP.wk && GAME.char_data.klan_id != 0 && GAME.char_data.klan_rent == 0 && GAME.clan_wars.length < count) {
-                    GAME.socket.emit('ga', {
-                        a: 39,
-                        type: 24,
-                        shorts: wars
-                    });
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
-                } else {
-                    window.setTimeout(PVP.start, PVP.wait / PVP.WSPP());
+                console.log("dec wars");
+                if (!PVP.wi) {
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
+                    return;
                 }
+                console.log("dec wars ", PVP.war_cnt);
+                if (PVP.war_cnt > 10)
+                    PVP.war_cnt = 0;
+                if (PVP.war_cnt == PVP.emp)
+                    PVP.war_cnt++;
+
+                PVP.wi = false;
+                setTimeout(() => {
+                    console.log("emit order war");
+                    GAME.emitOrder({a:50,type:7,target:PVP.war_cnt});
+                    PVP.war_cnt +=1;
+                    PVP.wi = true;
+
+                    setTimeout(() => {
+                        window.warx = document.getElementsByClassName("war_win")[PVP.org_cnt].getElementsByTagName("button")[0].getAttribute("data-war");
+                        GAME.emitOrder({a:50,type:13,war:warx,org:18});
+                        PVP.org_cnt +=1;}, 100);
+
+
+                },602);
+                window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
             };
             PVP.speed = () => {
                 var list = localStorage.getItem('pvp_speed');
@@ -1534,13 +1229,13 @@ if (typeof GAME === 'undefined') {} else {
                 return res;
             };
             var RESP = {
-                wait: 2,
+                wait: 600,
                 stop: true,
-                checkOST: true,
-                checkSSJ: true,
+                checkOST: false,
+                checkSSJ: false,
                 jaka: 0,
                 zmiana: false,
-                multifight: true,
+                multifight: false,
                 reload: false,
                 downb: false,
                 SENZU_BLUE: 'SENZU_BLUE',
@@ -1562,7 +1257,9 @@ if (typeof GAME === 'undefined') {} else {
                 CONF_SENZU: false,
                 bless: false,
                 checkOST_timer: 0,
-                code: true,
+                normal: false,
+                rare: false,
+                leg: false,
                 b1: false,
                 b2: false,
                 b3: false,
@@ -1595,6 +1292,7 @@ if (typeof GAME === 'undefined') {} else {
                 let abut = $("#clan_buffs").find(`button[data-option="activate_war_buff"]`);
                 let isDisabled = $("#clan_buffs").find(`button[data-option="activate_war_buff"]`).parents("tr").hasClass("disabled");
                 if (GAME.char_data.pr <= RESP.min_pa()) {
+                    console.log("resp use sensu");
                     RESP.useSenzu();
                     return true;
                 } else if (RESP.checkOST && $("#doubler_bar").css("display") === "none") {
@@ -1605,14 +1303,167 @@ if (typeof GAME === 'undefined') {} else {
                         page: GAME.ekw_page,
                         am: 1
                     });
-                    return true;
+                    return false;
                 } else if (RESP.checkOST && $('#doubler_status').text() <= '00:00:03') {
-                    return true;
+                    return false;
                 } else if ((!RESP.checkOST && RESP.checkOST_timer <= GAME.getTime()) || (RESP.jaka == 1 && RESP.checkOST_timer <= GAME.getTime())) {
                     RESP.checkOST_timer = GAME.getTime() + 60;
-                    return true;
+                    return false;
+                } else if (RESP.normal) {
+                    GAME.emitOrder({a:12,page:GAME.ekw_page});
+                    let ekwUsedElement = document.getElementById('ekw_used');
+                    let ekwUsedValue = ekwUsedElement.textContent;
+
+                    // let ekwSpaceElement = document.getElementById('ekw_space');
+                    // let ekwSpaceValue = ekwSpaceElement.textContent;
+                    if (ekwUsedValue < 100) {
+                    //     window.setTimeout(function() {
+                    //         GAME.page_switch("game_ekw");
+                    //     }, 225);
+                    //     Response.normal = false;
+                        return false;
+                    }
+        
+                    window.setTimeout(function() {
+                        GAME.emitOrder({a:12,page:2});
+                        GAME.ekw_page = 2;
+                        
+                        window.setTimeout(function() {
+                            RESP.DestroyItemsAtPage();
+                        }, 111);
+                    }, 570);
+                    window.setTimeout(function() {
+                        GAME.emitOrder({a:12,page:3});
+                        GAME.ekw_page = 3;
+                        
+                        window.setTimeout(function() {
+                            RESP.DestroyItemsAtPage();
+                        }, 111);
+                    }, 915);
+                    
+                    window.setTimeout(function() {
+                        GAME.emitOrder({a:12,page:4});
+                        GAME.ekw_page = 4;
+                        
+                        window.setTimeout(function() {
+                            RESP.DestroyItemsAtPage();
+                        }, 111);
+                    }, 1505);
+                    
+                    window.setTimeout(function() {
+                        GAME.emitOrder({a:12,page:5});
+                        GAME.ekw_page = 5;
+                        
+                        window.setTimeout(function() {
+                            RESP.DestroyItemsAtPage();
+                        }, 111);
+                    }, 2005);
+
+                    const komElements = document.querySelectorAll('#kom_con .kom');
+    
+                    komElements.forEach(kom => {
+                        const closeButton = kom.querySelector('.close_kom');
+                        closeButton.click();
+                    });
                 }
+                // item jakosc
+                // const targetElement = document.querySelector('.player_ekw_item[data-item_id="'+ GAME.dragged_item.id+'"]');
+                // const pattern = /<span id="quality">Jakość:/;
+                // if (targetElement) {
+                //   // Get the value of the data-slot attribute
+                //   const dataSlotValue = targetElement.getAttribute('data-original-title');
+                      
+                //   const match = dataSlotValue.match(/\((\d+)%\)/);
+              
+                //   if (match) {
+                //     // The value is in the first capturing group
+                //     const value = match[1];
+                //     console.log('Extracted value:', value); // Output: 31
+                //   } else {
+                //     console.log('Pattern not found.');
+                //   }
+                // } else {
+                //   console.log('Quality span not found.');
+                // }
+                // wymiana ramenow insta ronina
+                // GAME.emitOrder({
+                //     a: 211,
+                //     type: 2,
+                //     exchange: 9,
+                //     item: 91
+                // });
+
+
+                //  else if ($(".resp_normal .resp_status").hasClass("green")) {
+                //     GAME.emitOrder({a:12,page:GAME.ekw_page});
+                //     let ekwUsedElement = document.getElementById('ekw_used');
+                //     let ekwUsedValue = ekwUsedElement.textContent;
+
+                //     let ekwSpaceElement = document.getElementById('ekw_space');
+                //     let ekwSpaceValue = ekwSpaceElement.textContent;
+                //     if (ekwUsedValue > ekwSpaceElement * 0.7)
+                //         RESP.normal = true;
+                // }
                 return false;
+            };
+
+            RESP.SetPageAsActive = (page, klasa) => {
+                window.setTimeout(function() {
+                    let activePageElement = document.querySelector('.ekw_pag.option.active');
+                    let firstPageElement = document.querySelector('.ekw_pag.option[data-page="'+1+'"]');
+                    activePageElement.classList.remove('active');
+                    firstPageElement.classList.add('active');
+                    console.log("active page:", parseInt(firstPageElement.getAttribute('data-page')));
+
+                    window.setTimeout(function() {
+                        var items=[];
+                        $('#ekw_page_items .nonstackable[data-class="'+1+'"]').each(function( index ) {
+                            items.push(parseInt($(this).data('item_id')));
+                        });
+                        if(items.length){
+                            GAME.emitOrder({a:12,type:11,items:items,page:GAME.ekw_page});
+                            console.log("niszczenie itemow na stronie:", 1, 1);
+                        }
+                    }, 20);
+                }, 20);
+            }
+            RESP.DestroyItemsAtPage = () => {
+                var items=[];
+                window.setTimeout(function() {
+                $('#ekw_page_items .nonstackable[data-class="'+1+'"]').each(function( index ) {
+                                    items.push(parseInt($(this).data('item_id')));
+                                });
+                                if(items.length){
+                                    GAME.emitOrder({a:12,type:11,items:items,page:GAME.ekw_page});
+                                }
+                }, 50);
+                window.setTimeout(function() {
+                $('#ekw_page_items .nonstackable[data-class="'+2+'"]').each(function( index ) {
+                                    items.push(parseInt($(this).data('item_id')));
+                                });
+                                if(items.length){
+                                    GAME.emitOrder({a:12,type:11,items:items,page:GAME.ekw_page});
+                                }
+                }, 100);
+                window.setTimeout(function() {
+                $('#ekw_page_items .nonstackable[data-class="'+3+'"]').each(function( index ) {
+                                    items.push(parseInt($(this).data('item_id')));
+                                });
+                                if(items.length){
+                                    GAME.emitOrder({a:12,type:11,items:items,page:GAME.ekw_page});
+                                }
+                }, 150);
+
+                if (RESP.leg)  {
+                    window.setTimeout(function() {
+                        $('#ekw_page_items .nonstackable[data-class="'+4+'"]').each(function( index ) {
+                            items.push(parseInt($(this).data('item_id')));
+                                });
+                                if(items.length){
+                                     GAME.emitOrder({a:12,type:11,items:items,page:GAME.ekw_page});
+                                }
+                        }, 150);
+                }
             };
             RESP.min_pa = () => {
                 if (GAME.char_data.doubler_rate && GAME.char_data.doubler_rate > 19) {
@@ -1630,7 +1481,7 @@ if (typeof GAME === 'undefined') {} else {
                 if (!RESP.stop) {
                     if (!RESP.check()) {
                         setTimeout(() => {
-                            RESP.fight();
+                            // RESP.fight();
                             RESP.go();
                         }, RESP.wait);
                     } else {
@@ -1643,7 +1494,7 @@ if (typeof GAME === 'undefined') {} else {
             };
             RESP.fight = () => {
                 console.log('resp fight');
-                GAME.socket.emit(`ga`,{a:13,mob_num:0,fo:GAME.map_options.ma});
+                // GAME.socket.emit(`ga`,{a:13,mob_num:0,fo:GAME.map_options.ma});
                 if (RESP.reload) {
                     setTimeout(() => {
                         GAME.maploaded = false;
@@ -1701,13 +1552,13 @@ if (typeof GAME === 'undefined') {} else {
                 return r;
             };
             RESP.go = () => {
-                if (RESP.downb) {
-                    GAME.map_move(3);
-                    RESP.downb = false;
-                } else {
-                    GAME.map_move(6);
-                    RESP.downb = true;
-                }
+                // if (RESP.downb) {
+                //     GAME.map_move(3);
+                //     RESP.downb = false;
+                // } else {
+                //     GAME.map_move(6);
+                //     RESP.downb = true;
+                // }
                 
                 RESP.action();
             };
@@ -1715,20 +1566,21 @@ if (typeof GAME === 'undefined') {} else {
             RESP.getSenzu = (type) => {
                 switch (type) {
                     case RESP.SENZU_BLUE:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1244);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357187);
                     case RESP.SENZU_PURPLE:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1259);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357459);
                     case RESP.SENZU_MAGIC:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1309);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357455);
                     case RESP.SENZU_GREEN:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1242);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357426);
                     case RESP.SENZU_YELLOW:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1260);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357192);
                     case RESP.SENZU_RED:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1243);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357193);
                 }
             };
             RESP.useSenzu = () => {
+                console.log("use senzu", RESP.stop);
                 if (RESP.stop) return;
                 const blue = RESP.getSenzu(RESP.SENZU_BLUE);
                 const purple = RESP.getSenzu(RESP.SENZU_PURPLE);
@@ -1738,22 +1590,22 @@ if (typeof GAME === 'undefined') {} else {
                 const red = RESP.getSenzu(RESP.SENZU_RED);
                 switch (RESP.CONF_SENZU) {
                     case RESP.SENZU_BLUE:
-                        RESP.useBlue(Math.min(RESP.CONF_BLUE_AMOUNT(), blue.stack, RESP.CONF_BLUE_AMOUNT1));
+                        RESP.useBlue(1);
                         break;
                     case RESP.SENZU_PURPLE:
-                        RESP.usePurple(Math.min(RESP.CONF_PURPLE_AMOUNT, purple.stack));
+                        RESP.usePurple(1);
                         break;
                     case RESP.SENZU_MAGIC:
-                        RESP.useMagic();
+                        RESP.useMagic(1);
                         break;
                     case RESP.SENZU_GREEN:
-                        RESP.useGreen(Math.min(RESP.CONF_GREEN_AMOUNT(), green.stack, RESP.CONF_GREEN_AMOUNT1));
+                        RESP.useGreen(1);
                         break;
                     case RESP.SENZU_YELLOW:
-                        RESP.useYellow(Math.min(RESP.CONF_YELLOW_AMOUNT, yellow.stack));
+                        RESP.useYellow(1);
                         break;
                     case RESP.SENZU_RED:
-                        RESP.useRed();
+                        RESP.useRed(1);
                         break;
                     default:
                         if (blue && blue.stack > RESP.CONF_BLUE_AMOUNT() * 20) RESP.useBlue(Math.min(RESP.CONF_BLUE_AMOUNT(), blue.stack, RESP.CONF_BLUE_AMOUNT1));
@@ -1768,7 +1620,7 @@ if (typeof GAME === 'undefined') {} else {
                 }
                 GAME.socket.emit('ga', {
                     a: 12,
-                    type: 14,
+                    type: 8,
                     iid: blue.id,
                     page: GAME.ekw_page,
                     am: amount
@@ -1781,7 +1633,7 @@ if (typeof GAME === 'undefined') {} else {
                 }
                 GAME.socket.emit('ga', {
                     a: 12,
-                    type: 14,
+                    type: 8,
                     iid: green.id,
                     page: GAME.ekw_page,
                     am: amount
@@ -1794,7 +1646,7 @@ if (typeof GAME === 'undefined') {} else {
                 }
                 GAME.socket.emit('ga', {
                     a: 12,
-                    type: 14,
+                    type: 8,
                     iid: purple.id,
                     page: GAME.ekw_page,
                     am: amount
@@ -1807,7 +1659,7 @@ if (typeof GAME === 'undefined') {} else {
                 }
                 GAME.socket.emit('ga', {
                     a: 12,
-                    type: 14,
+                    type: 8,
                     iid: yellow.id,
                     page: GAME.ekw_page,
                     am: amount
@@ -1820,7 +1672,7 @@ if (typeof GAME === 'undefined') {} else {
                 }
                 GAME.socket.emit('ga', {
                     a: 12,
-                    type: 14,
+                    type: 8,
                     iid: red.id,
                     page: GAME.ekw_page,
                     am: 1
@@ -1833,234 +1685,13 @@ if (typeof GAME === 'undefined') {} else {
                 }
                 GAME.socket.emit('ga', {
                     a: 12,
-                    type: 14,
+                    type: 8,
                     iid: magic.id,
                     page: GAME.ekw_page,
                     am: 1
                 });
             };
-            var LPVM = {
-                Stop: true,
-                Matrix: [],
-                Map: 0,
-                Path: [],
-                Born: 2,
-                pvm_killed: 0,
-                limit: false,
-                Killed: false,
-                wait: 70,
-                limit2: 60
-            };
-            LPVM.UpdateKilledCounter = function(num) {
-                $("#lpvm_Panel .pvm_killed b").text(num);
-            };
-            LPVM.Start = function() {
-                LPVM.LoadPVM();
-            };
-            LPVM.CreateMatrix = function() {
-                LPVM.Matrix = [];
-                LPVM.Map = GAME.mapcell;
-                for (var i = 0; i < parseInt(GAME.map.max_y); i++) {
-                    LPVM.Matrix[i] = [];
-                    for (var j = 0; j < parseInt(GAME.map.max_x); j++) {
-                        if (LPVM.Map[parseInt(j + 1) + '_' + parseInt(i + 1)].m == 1) {
-                            LPVM.Matrix[i][j] = 1;
-                        } else {
-                            LPVM.Matrix[i][j] = 0
-                        }
-                    }
-                }
-            };
-            LPVM.LoadPVM = function() {
-                GAME.socket.emit('ga', {
-                    a: 32,
-                    type: 0
-                });
-            };
-            LPVM.KillWanted = function() {
-                if (document.getElementById("special_list_con").childElementCount) {
-                    LPVM.Killed = true;
-                    GAME.socket.emit('ga', {
-                        a: 32,
-                        type: 1,
-                        wanted_id: LPVM.Born,
-                        quick: 1
-                    });
-                }
-            };
-            LPVM.Collect = function() {
-                GAME.socket.emit('ga', {
-                    a: 32,
-                    type: 2,
-                    wanted: LPVM.Born
-                });
-                LPVM.pvm_killed++;
-                LPVM.UpdateKilledCounter(LPVM.pvm_killed);
-            };
-            LPVM.Teleport = function() {
-                var loc = parseInt($("#wanted_list .green.option").eq(LPVM.Born).attr("data-loc"));
-                if ((LPVM.pvm_killed >= parseInt(LPVM.limit2)) && LPVM.limit) {
-                    $(".lpvm_lpvm .lpvm_status").removeClass("green").addClass("red").html("Off");
-                    LPVM.Stop = true;
-                } else if (GAME.char_data != loc) {
-                    GAME.socket.emit('ga', {
-                        a: 12,
-                        type: 18,
-                        loc: loc
-                    });
-                    setTimeout(3000);
-                } else {
-                    LPVM.Go();
-                }
-            };
-            LPVM.Go = function() {
-                LPVM.CreateMatrix();
-                LPVM.Finder.setGrid(LPVM.Matrix);
-                PathID = LPVM.Finder.findPath(GAME.char_data.x - 1, GAME.char_data.y - 1, parseInt(GAME.map_wanteds.x) - 1, parseInt(GAME.map_wanteds.y) - 1, function(path) {
-                    if (path === null) {} else {
-                        if (path[0].x == GAME.char_data.x - 1 && path[0].y == GAME.char_data.y - 1) {
-                            path.shift();
-                        }
-                        LPVM.Path = path;
-                        setTimeout(function() {
-                            LPVM.Move();
-                        }, LPVM.wait);
-                    }
-                });
-                LPVM.Finder.calculate();
-            };
-            LPVM.Move = function() {
-                if (!LPVM.Stop) {
-                    if (LPVM.Path[0].x > GAME.char_data.x - 1 && LPVM.Path[0].y == GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 7,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x < GAME.char_data.x - 1 && LPVM.Path[0].y == GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 8,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x == GAME.char_data.x - 1 && LPVM.Path[0].y > GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 1,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x == GAME.char_data.x - 1 && LPVM.Path[0].y < GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 2,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x > GAME.char_data.x - 1 && LPVM.Path[0].y > GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 3,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x < GAME.char_data.x - 1 && LPVM.Path[0].y < GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 6,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x > GAME.char_data.x - 1 && LPVM.Path[0].y < GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 5,
-                            vo: GAME.map_options.vo
-                        });
-                    } else if (LPVM.Path[0].x < GAME.char_data.x - 1 && LPVM.Path[0].y > GAME.char_data.y - 1) {
-                        GAME.socket.emit('ga', {
-                            a: 4,
-                            dir: 4,
-                            vo: GAME.map_options.vo
-                        });
-                    } else {
-                        LPVM.Go();
-                    }
-                }
-            };
-            LPVM.Next = function() {
-                if (LPVM.Path.length - 1 > 0) {
-                    LPVM.Path.shift();
-                    setTimeout(function() {
-                        LPVM.Move();
-                    }, LPVM.wait);
-                } else {
-                    setTimeout(function() {
-                        LPVM.KillWanted();
-                    }, 500);
-                }
-            };
-            LPVM.HandleSockets = function(res) {
-                if (!LPVM.Stop && res.a === 4 && res.char_id === GAME.char_id) {
-                    LPVM.Next();
-                } else if (!LPVM.Stop && res.a === 32 && res.e == 0) {
-                    if ($('button[data-wanted="' + LPVM.Born + '"]').html()) {
-                        setTimeout(function() {
-                            GAME.socket.emit('ga', {
-                                a: 32,
-                                type: 2,
-                                wanted: LPVM.Born
-                            });
-                        }, 150);
-                    } else {
-                        setTimeout(function() {
-                            LPVM.Teleport();
-                        }, 150);
-                    }
-                } else if (!LPVM.Stop && LPVM.Killed && res.a === 602 && !res.res.wanted) {
-                    LPVM.Killed = false;
-                    setTimeout(function() {
-                        LPVM.Collect();
-                    }, 150);
-                } else if (!LPVM.Stop && res.a === 32 && res.e == 2) {
-                    setTimeout(function() {
-                        LPVM.Teleport();
-                    }, 150);
-                } else if (!LPVM.Stop && res.a === 12) {
-                    if ("show_map" in res) {
-                        if (GAME.char_data.x == GAME.map_wanteds.x && GAME.char_data.y == GAME.map_wanteds.y) {
-                            setTimeout(function() {
-                                LPVM.KillWanted();
-                            }, 500);
-                        } else {
-                            setTimeout(function() {
-                                LPVM.Go();
-                            }, 1000);
-                        }
-                    } else {
-                        setTimeout(() => {
-                            GAME.socket.emit('ga', {
-                                a: 32,
-                                type: 0
-                            });
-                        }, 100);
-                    }
-                } else if (!LPVM.stop && res.a === undefined) {
-                    setTimeout(() => {
-                        LPVM.Go();
-                    }, 500);
-                }
-            };
-            GAME.socket.on('gr', function(msg) {
-                LPVM.HandleSockets(msg);
-            });
-            LPVM.LoadES = function() {
-                esjs = document.createElement('script');
-                esjs.src = 'https://cdn.jsdelivr.net/npm/easystarjs@0.4.3/bin/easystar-0.4.3.min.js';
-                esjs.onload = () => {
-                    LPVM.Finder = new EasyStar.js();
-                    LPVM.Finder.enableDiagonals();
-                    LPVM.Finder.setAcceptableTiles([1]);
-                    $("#BOT_control").show();
-                };
-                document.head.append(esjs);
-            }();
+            
             var RES = {
                 stop: true,
                 last_loc: 0,
@@ -2299,7 +1930,7 @@ if (typeof GAME === 'undefined') {} else {
                 }
             };
             RES.HandleResponse = function(res) {
-                if (RES.stop && res.a === 3 && PVP.stop && LPVM.Stop && RESP.stop && CODE.stop) {
+                if (RES.stop && res.a === 3 && PVP.stop  && RESP.stop) {
                     this.listMines();
                     this.getMinesPos();
                 }
@@ -2339,175 +1970,7 @@ if (typeof GAME === 'undefined') {} else {
                     RES.listMines();
                 }
             }, 500);
-            var CODE = {
-                char: document.getElementById("char_list_con").children[0].attributes[2].value,
-                what_to_train: 1,
-                what_to_traintime: 1,
-                whatNow: 0,
-                licznik: 0,
-                licznik2: 0,
-                stop: true,
-                wait: 2000,
-                checkSSJ: true,
-                acc: false,
-                zast: false,
-                b1: false,
-                b2: false
-            };
-            CODE.start = () => {
-                if (!CODE.stop) {
-                    switch (CODE.whatNow) {
-                        case 0:
-                            CODE.whatNow++;
-                            CODE.use_char();
-                            break;
-                        case 1:
-                            CODE.whatNow++;
-                            CODE.checkTR();
-                            break;
-                        case 2:
-                            CODE.whatNow++;
-                            CODE.tren();
-                            break;
-                        case 3:
-                            CODE.whatNow++;
-                            CODE.kodyy();
-                            break;
-                        case 4:
-                            CODE.whatNow = 0;
-                            CODE.out();
-                            break;
-                        default:
-                    }
-                }
-            };
-            CODE.get_char_acc = () => {
-                var len = GAME.player_chars;
-                var tabela = [];
-                for (var i = 0; i < len; i++) {
-                    tabela[i] = parseInt($("#char_list_con")[0].children[i].attributes[2].value);
-                }
-                return tabela;
-            };
-            CODE.get_char_zast = () => {
-                var len = $("#zast_list_con li").length;
-                var tabela = [];
-                for (var i = 0; i < len; i++) {
-                    tabela[i] = document.getElementById("zast_list_con").children[i].attributes[2].value;
-                }
-                return tabela;
-            };
-            CODE.use_char = () => {
-                var length = CODE.get_char_acc().length;
-                var length2 = CODE.get_char_zast().length;
-                if (CODE.licznik < length && CODE.acc) {
-                    GAME.socket.emit('ga', {
-                        a: 2,
-                        char_id: CODE.get_char_acc()[CODE.licznik]
-                    });
-                    CODE.licznik++;
-                    window.setTimeout(CODE.start, CODE.wait);
-                } else if (CODE.licznik2 < length2 && CODE.zast) {
-                    GAME.socket.emit('ga', {
-                        a: 2,
-                        char_id: CODE.get_char_zast()[CODE.licznik2],
-                        type: 1
-                    });
-                    CODE.licznik2++;
-                    window.setTimeout(CODE.start, CODE.wait);
-                } else {
-                    CODE.licznik = 0;
-                    CODE.licznik2 = 0;
-                    window.setTimeout(CODE.start, CODE.wait);
-                }
-            };
-            CODE.kodyy = () => {
-                let błogo2 = $("#ekw_page_items").find("div[data-base_item_id=1751]").attr("data-item_id");
-                if (GAME.ekw_page != 10 && !CODE.acc && !CODE.zast) {
-                    GAME.ekw_page = 10;
-                    GAME.socket.emit('ga', {
-                        a: 12,
-                        page: 10,
-                        used: 1
-                    });
-                    window.setTimeout(CODE.kodyy, CODE.wait);
-                } else if ($("#char_buffs").find("[data-buff=80]").length != 1 && $("#train_uptime").find('.timer').length == 0 && błogo2 && CODE.b2 && !CODE.acc && !CODE.zast && !CODE.stop) {
-                    GAME.socket.emit('ga', {
-                        a: 12,
-                        type: 14,
-                        iid: parseInt(błogo2),
-                        page: 10
-                    });
-                    window.setTimeout(CODE.kodyy, CODE.wait);
-                } else if ($("#train_uptime").find('.timer').length == 0) {
-                    GAME.socket.emit('ga', {
-                        a: 8,
-                        type: 5,
-                        apud: 'vzaaa'
-                    });
-                    window.setTimeout(CODE.start, CODE.wait);
-                } else {
-                    window.setTimeout(CODE.start, CODE.wait);
-                }
-            };
-            CODE.out = () => {
-                if (CODE.acc || CODE.zast) {
-                    GAME.socket.emit('ga', {
-                        a: 5
-                    });
-                    window.setTimeout(CODE.start, CODE.wait);
-                } else {
-                    window.setTimeout(CODE.start, CODE.wait);
-                }
-            };
-            CODE.checkTR = () => {
-                if (CODE.checkSSJ && GAME.quick_opts.ssj) {
-                    if ($("#ssj_bar")[0].attributes[2].value == "display: none;") {
-                        GAME.socket.emit('ga', {
-                            a: 18,
-                            type: 5,
-                            tech_id: GAME.quick_opts.ssj[0]
-                        });
-                        window.setTimeout(CODE.start, CODE.wait);
-                    } else if ($('#ssj_status').text() == "--:--:--") {
-                        GAME.socket.emit('ga', {
-                            a: 18,
-                            type: 6
-                        });
-                        window.setTimeout(CODE.checkTR, CODE.wait);
-                    } else window.setTimeout(CODE.start, CODE.wait);
-                } else window.setTimeout(CODE.start, CODE.wait);
-            };
-            CODE.tren = () => {
-                let błogo1 = $("#ekw_page_items").find("div[data-base_item_id=1629]").attr("data-item_id");
-                if (GAME.is_training) {
-                    window.setTimeout(CODE.start, CODE.wait);
-                } else if (GAME.ekw_page != 10 && !CODE.acc && !CODE.zast) {
-                    GAME.ekw_page = 10;
-                    GAME.socket.emit('ga', {
-                        a: 12,
-                        page: 10,
-                        used: 1
-                    });
-                    window.setTimeout(CODE.tren, CODE.wait);
-                } else if ($("#char_buffs").find("[data-buff=54]").length != 1 && !GAME.is_training && błogo1 && CODE.b1 && !CODE.acc && !CODE.zast && !CODE.stop) {
-                    GAME.socket.emit('ga', {
-                        a: 12,
-                        type: 14,
-                        iid: parseInt(błogo1),
-                        page: 10
-                    });
-                    window.setTimeout(CODE.tren, CODE.wait);
-                } else {
-                    GAME.socket.emit('ga', {
-                        a: 8,
-                        type: 2,
-                        stat: CODE.what_to_train,
-                        duration: CODE.what_to_traintime
-                    });
-                    window.setTimeout(CODE.start, CODE.wait);
-                }
-            };
+           
             createPanel();
             setTimeout(() => {
                 GAME.socket.emit('ga', {
