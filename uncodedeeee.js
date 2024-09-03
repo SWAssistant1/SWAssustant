@@ -40,7 +40,7 @@ if (typeof GAME === 'undefined') {} else {
                 const cssres = ` #res_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 450px; left: 75%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #res_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #res_Panel .res_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #res_Panel ul {margin-left:-30px; color:white; margin:7px 0px 5px 0px; padding: 0px; text-align: center;} `;
                 const cssinne = ` #inne_Panel { background: rgba(0,0,0,0.9); position: fixed; top: 650px; left: 80%; z-index: 9999; width: 200px; padding: 1px; border-radius: 5px; border-style: solid; border-width: 7px 8px 7px 7px; display:block; user-select: none; color: #333333; } #inne_Panel .sekcja { position: absolute; top: -27px; left: -7px; background: rgba(0,0,0,0.9); filter: hue-rotate(196deg); background-size: 100% 100%; width: 150px; cursor: all-scroll; } #inne_Panel .inne_button {cursor:pointer;text-align:center; border-bottom:solid gray 1px; color: white;} #inne_Panel .pvm_killed {cursor:pointer;text-align:center; border-LGtom:solid gray 1px;text-align:center; color:white;} #inne_Panel .gamee_input{text-align:center; border-bottom:solid gray 1px; color: white;} `;
                 const html = ` <div id="main_Panel"> <div class="sekcja panel_dragg">ALL FOR ONE</div> <div class='gh_button gh_resp'>PVM<b class='gh_status red'>Off</b></div> <div class='gh_button gh_pvp'>PVP<b class='gh_status red'>Off</b></div>  <div class='gh_button gh_res'>Zbierajka<b class='gh_status red'>Off</b></div> <div class='gh_button gh_inne'>Inne<b class='gh_status red'>Off</b></div> </div> `;
-                const PVP_panel = ` <div id="pvp_Panel"> <div class="sekcja pvp_dragg">PVP</div> <div class='pvp_button pvp_pvp'>PVP<b class='pvp_status red'>Off</b></div>  <div class='pvp_button pvp_WI'>Wojny <b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_WK'>Wojny Klanowe<b class='pvp_status red'>Off</b></div>  <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Lista wojen" name='pvp_capt' value='' /></div> <div class='gameee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Szybkość 10-100" name='speed_capt' value='50' /></div> </div> `;
+                const PVP_panel = ` <div id="pvp_Panel"> <div class="sekcja pvp_dragg">PVP</div> <div class='pvp_button pvp_pvp'>PVP<b class='pvp_status red'>Off</b></div>  <div class='pvp_button pvp_WI'>Wojny <b class='pvp_status red'>Off</b></div> <div class='pvp_button pvp_org'> wynajmij orge <b class='pvp_status red'>Off</b></div>   <div class='gameee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="org id" name='org_id' value='18' /></div> <div class='pvp_button pvp_WK'>Wojny Klanowe<b class='pvp_status red'>Off</b></div>  <div class='gamee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Lista wojen" name='pvp_capt' value='' /></div> <div class='gameee_input'><input style='width:120px; margin-left:-2px; background:grey;text-align:center;font-size:16;' type='text' placeholder="Szybkość 10-100" name='speed_capt' value='50' /></div> </div> `;
                 const RESP_panel = ` <div id="resp_Panel"> <div class="sekcja resp_dragg">SPAWN MOBKóW</div> <div class="resp_button resp_resp">On<b class="resp_status red">Off</b></div>  <div class="resp_button resp_resp1">Resp<b class="resp_status red">Off</b></div> <div class="resp_button resp_rare">exp<b class="resp_status red">Off</b></div> <div class="resp_button resp_normal">Niszczenie eq<b class="resp_status red">Off</b></div> <div class="resp_button resp_leg">Niszczenie leq<b class="resp_status red">Off</b></div> <div class="resp_button resp_blue">Ogromny ramen<b class="resp_status red">Off</b></div> <div class="resp_button resp_green">maly ramen<b class="resp_status red">Off</b></div> <div class="resp_button resp_purple">Powiekszony ramen<b class="resp_status red">Off</b></div> <div class="resp_button resp_yellow">zolta pigula<b class="resp_status red">Off</b></div> <div class="resp_button resp_red">zielona pigula<b class="resp_status red">Off</b></div> <div class="resp_button resp_magic">Czerwona pigula<b class="resp_status red">Off</b></div>    <div class="resp_button resp_on">Włącz All<b class="resp_status green">On</b></div> <div class="resp_button resp_off">Wyłącz All<b class="resp_status red">Off</b></div>   </div> `;
                 const CODE_panel = ` <div id="code_Panel"> <div class="sekcja code_dragg">Inne</div> <div class="code_button code_code">KODY<b class="code_status red">Off</b></div> <div class="code_button code_acc">Konto<b class="code_status red">Off</b></div> <div class="code_button code_zast">Zastępstwa<b class="code_status red">Off</b></div> <div class="code_button code_bh1">Błogo 250% tren<b class="code_status red">Off</b></div> <div class="code_button code_bh2">Błogo 5% kod<b class="code_status red">Off</b></div> <label class='select_input'><select id='bot_what_to_train'><option value='1'>Siła</option><option value='2'>Szybkość</option><option value='3'>Wytrzymałość</option><option value='4'>Siła Woli</option><option value='5'>Energia Ki</option><option value='6'>Wtajemniczenie</option></select></label> <label class='select_input'><select id='bot_what_to_traintime'><option value='1'>1 godz.</option><option value='2'>2 godz.</option><option value='3'>3 godz.</option><option value='4'>4 godz.</option><option value='5'>5 godz.</option><option value='6'>6 godz.</option><option value='7'>7 godz.</option><option value='8'>8 godz.</option><option value='9'>9 godz.</option><option value='10'>10 godz.</option><option value='11'>11 godz.</option><option value='12'>12 godz.</option></label> </div> `;
                 const RES_panel = ` <div id="res_Panel"> <div class="sekcja res_dragg">SUROWCE</div> <div class="res_button res_res">ZBIERAJ<b class="res_status red">Off</b></div> <div class="bt_cool" style="text-align:center; color:white;"></div> <ul></ul> </div> `;
@@ -254,6 +254,16 @@ if (typeof GAME === 'undefined') {} else {
                     } else {
                         $(".pvp_WI .pvp_status").removeClass("red").addClass("green").html("On");
                         PVP.wi = true;
+                    }
+                });
+
+                $('#pvp_Panel .pvp_org').click(() => {
+                    if (PVP.org) {
+                        $(".pvp_org .pvp_status").removeClass("green").addClass("red").html("Off");
+                        PVP.org = false;
+                    } else {
+                        $(".pvp_org .pvp_status").removeClass("red").addClass("green").html("On");
+                        PVP.org = true;
                     }
                 });
 
@@ -602,6 +612,8 @@ if (typeof GAME === 'undefined') {} else {
             var PVP = {
                 stop: true,
                 wi: false,
+                org: false,
+                war_list: 0,
                 war_cnt: 0,
                 org_cnt: 0,
                 emp : 0,
@@ -788,6 +800,10 @@ if (typeof GAME === 'undefined') {} else {
                         PVP.dec_wars();
                         break;
                     case 11:
+                        PVP.caseNumber++;
+                        PVP.orgi();
+                        break;
+                    case 12:
                         PVP.caseNumber = 0;
                         PVP.go();
                     default:
@@ -1093,6 +1109,12 @@ if (typeof GAME === 'undefined') {} else {
             PVP.check = () => {
                 if ($("#war_list .timer").length === 0 && PVP.wk) {
                     GAME.emitOrder({a:39,type:24,shorts:'Yuki'});
+                    GAME.loadMapJson(function() {
+                        GAME.socket.emit('ga', {
+                            a: 3,
+                            vo: GAME.map_options.vo
+                        }, 1);
+                    });
                 }
                 window.setTimeout(PVP.start, 180);
             };
@@ -1115,32 +1137,58 @@ if (typeof GAME === 'undefined') {} else {
             PVP.save_clan_list = () => {
                 localStorage.setItem('clan_list', PVP.war);
             };
+            PVP.orgi = () => {
+                console.log("org ", $("#pvp_Panel input[name=org_id]").val());
+                if (!PVP.org) {
+                    window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
+                    return;
+                }
+                if (PVP.org_cnt > 9)
+                    PVP.org_cnt = 0;
+                PVP.org = false;
+                var org_id = 18;
+                if ($("#pvp_Panel input[name=org_id]").val() != '')
+                    org_id = $("#pvp_Panel input[name=org_id]").val();
+                setTimeout(() => {
+                    window.warx = document.getElementsByClassName("war_win")[PVP.org_cnt].getElementsByTagName("button")[0].getAttribute("data-war");
+                    GAME.emitOrder({a:50,type:13,war:warx,org:org_id});
+                    PVP.org_cnt +=1;
+                    PVP.org = true;
+                }, 100);
+                
+                window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
+            }
             PVP.dec_wars = () => {
                 console.log("dec wars");
                 if (!PVP.wi) {
                     window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
                     return;
                 }
-                console.log("dec wars ", PVP.war_cnt);
+                console.log("dec wars ", PVP.war_cnt, PVP.org_cnt);
                 if (PVP.war_cnt > 10)
                     PVP.war_cnt = 0;
+
                 if (PVP.war_cnt == PVP.emp)
                     PVP.war_cnt++;
 
                 PVP.wi = false;
+
                 setTimeout(() => {
                     console.log("emit order war");
                     GAME.emitOrder({a:50,type:7,target:PVP.war_cnt});
                     PVP.war_cnt +=1;
                     PVP.wi = true;
-
-                    setTimeout(() => {
-                        window.warx = document.getElementsByClassName("war_win")[PVP.org_cnt].getElementsByTagName("button")[0].getAttribute("data-war");
-                        GAME.emitOrder({a:50,type:13,war:warx,org:18});
-                        PVP.org_cnt +=1;}, 100);
-
-
                 },602);
+
+                if (PVP.war_list > $("#ewar_list .timer").length || PVP.war_list < $("#ewar_list .timer").length) {
+                    PVP.war_list = $("#ewar_list .timer").length;
+                    GAME.loadMapJson(function() {
+                        GAME.socket.emit('ga', {
+                        a: 3,
+                        vo: GAME.map_options.vo
+                        }, 1);
+                    });
+                }
                 window.setTimeout(PVP.start, PVP.wait_pvp / PVP.WSPP());
             };
             PVP.speed = () => {
@@ -1156,10 +1204,10 @@ if (typeof GAME === 'undefined') {} else {
             };
             PVP.WSPP = () => {
                 var speed = PVP.WSP;
-                if (speed < 10) speed = 10;
+                if (speed < 10) speed = 2;
                 if (speed > 100) speed = 100;
                 if ($("#pvp_Panel input[name=speed_capt]").val() == '') speed = 50;
-                return speed / 50;
+                return speed;
             };
             GAME.parseListPlayer = function (entry, pvp_master) {
                 var res = '';
@@ -1316,14 +1364,20 @@ if (typeof GAME === 'undefined') {} else {
 
                     // let ekwSpaceElement = document.getElementById('ekw_space');
                     // let ekwSpaceValue = ekwSpaceElement.textContent;
-                    if (ekwUsedValue < 100) {
+                    if ((($(".resp_rare .resp_status").hasClass("green")) && ekwUsedValue < 1000) ||
+                    (($(".resp_resp1 .resp_status").hasClass("green")) && ekwUsedValue < 1000)) {
                     //     window.setTimeout(function() {
                     //         GAME.page_switch("game_ekw");
                     //     }, 225);
                     //     Response.normal = false;
                         return false;
                     }
-        
+                    const komElements = document.querySelectorAll('#kom_con .kom');
+    
+                    komElements.forEach(kom => {
+                        const closeButton = kom.querySelector('.close_kom');
+                        closeButton.click();
+                    });
                     window.setTimeout(function() {
                         GAME.emitOrder({a:12,page:2});
                         GAME.ekw_page = 2;
@@ -1359,12 +1413,7 @@ if (typeof GAME === 'undefined') {} else {
                         }, 111);
                     }, 2005);
 
-                    const komElements = document.querySelectorAll('#kom_con .kom');
-    
-                    komElements.forEach(kom => {
-                        const closeButton = kom.querySelector('.close_kom');
-                        closeButton.click();
-                    });
+
                 }
                 // item jakosc
                 // const targetElement = document.querySelector('.player_ekw_item[data-item_id="'+ GAME.dragged_item.id+'"]');
@@ -1566,22 +1615,22 @@ if (typeof GAME === 'undefined') {} else {
             RESP.getSenzu = (type) => {
                 switch (type) {
                     case RESP.SENZU_BLUE:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357187);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 42); // ogromny ramen
                     case RESP.SENZU_PURPLE:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357459);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 41); // powiekszony ramen
                     case RESP.SENZU_MAGIC:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357455);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 30); // czerwona pigula
                     case RESP.SENZU_GREEN:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357426);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 1);  // zwykly ramion
                     case RESP.SENZU_YELLOW:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357192);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 29); // zolta pigula
                     case RESP.SENZU_RED:
-                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 357193);
+                        return GAME.quick_opts.senzus.find(senzu => senzu.item_id === 28); // zielona pigula
                 }
             };
             RESP.useSenzu = () => {
-                console.log("use senzu", RESP.stop);
-                if (RESP.stop) return;
+                console.log("use senzu", RESP.stop, RESP.CONF_SENZU);
+                // if (RESP.stop) return;
                 const blue = RESP.getSenzu(RESP.SENZU_BLUE);
                 const purple = RESP.getSenzu(RESP.SENZU_PURPLE);
                 const magic = RESP.getSenzu(RESP.SENZU_MAGIC);
@@ -1599,7 +1648,7 @@ if (typeof GAME === 'undefined') {} else {
                         RESP.useMagic(1);
                         break;
                     case RESP.SENZU_GREEN:
-                        RESP.useGreen(1);
+                        RESP.useGreen(10);
                         break;
                     case RESP.SENZU_YELLOW:
                         RESP.useYellow(1);
@@ -1608,9 +1657,7 @@ if (typeof GAME === 'undefined') {} else {
                         RESP.useRed(1);
                         break;
                     default:
-                        if (blue && blue.stack > RESP.CONF_BLUE_AMOUNT() * 20) RESP.useBlue(Math.min(RESP.CONF_BLUE_AMOUNT(), blue.stack, RESP.CONF_BLUE_AMOUNT1));
-                        else if (green && green.stack > RESP.CONF_GREEN_AMOUNT() * 5) RESP.useGreen(Math.min(RESP.CONF_GREEN_AMOUNT(), green.stack, RESP.CONF_GREEN_AMOUNT1));
-                        else if (red && red.stack > 0) RESP.useRed();
+                        break;
                 }
             };
             RESP.useBlue = (amount = RESP.CONF_BLUE_AMOUNT()) => {
@@ -1623,11 +1670,12 @@ if (typeof GAME === 'undefined') {} else {
                     type: 8,
                     iid: blue.id,
                     page: GAME.ekw_page,
-                    am: amount
+                    am: 2
                 });
             };
             RESP.useGreen = (amount = RESP.CONF_GREEN_AMOUNT()) => {
                 const green = RESP.getSenzu(RESP.SENZU_GREEN);
+                console.log("use green", green);
                 if (!green) {
                     return;
                 }
@@ -1636,7 +1684,7 @@ if (typeof GAME === 'undefined') {} else {
                     type: 8,
                     iid: green.id,
                     page: GAME.ekw_page,
-                    am: amount
+                    am: 5
                 });
             };
             RESP.usePurple = (amount = RESP.CONF_PURPLE_AMOUNT) => {
@@ -1649,7 +1697,7 @@ if (typeof GAME === 'undefined') {} else {
                     type: 8,
                     iid: purple.id,
                     page: GAME.ekw_page,
-                    am: amount
+                    am: 3
                 });
             };
             RESP.useYellow = (amount = RESP.CONF_YELLOW_AMOUNT) => {
@@ -1662,7 +1710,7 @@ if (typeof GAME === 'undefined') {} else {
                     type: 8,
                     iid: yellow.id,
                     page: GAME.ekw_page,
-                    am: amount
+                    am: 1
                 });
             };
             RESP.useRed = () => {
